@@ -4,18 +4,18 @@ Overclocking means increasing the clock speed, which increases temperatures. Und
 
 ## ToC
 
-- [Preconfigurations]()
-  - [MSI Afterburner]()
-  - [3DMark]()
-  - [Superpositions]()
-  - [OCCT]()
-- [Overclocking]()
-  - [Increasing the core clock & finding the voltage]()
-- [Undervolting]()
-  - [Limiting the voltage]()
-- [Memory Overclock]()
-  - [Increasing the memory clock]()
-- [Final Test]()
+- [Preconfigurations](https://github.com/5Noxi/gpu-oc-uv#preconfigurations)
+  - [MSI Afterburner](https://github.com/5Noxi/gpu-oc-uv#msi-afterburner)
+  - [3DMark](https://github.com/5Noxi/gpu-oc-uv#3dmark)
+  - [Superposition](https://github.com/5Noxi/gpu-oc-uv#superposition)
+  - [OCCT](https://github.com/5Noxi/gpu-oc-uv#occt)
+- [Overclocking](https://github.com/5Noxi/gpu-oc-uv#overclocking)
+  - [Increasing the core clock & finding the voltage](https://github.com/5Noxi/gpu-oc-uv#increasing-the-core-clock--finding-the-voltage)
+- [Undervolting](https://github.com/5Noxi/gpu-oc-uv#undervolting)
+  - [Limiting the voltage](https://github.com/5Noxi/gpu-oc-uv#limiting-the-voltage)
+- [Memory Overclock](https://github.com/5Noxi/gpu-oc-uv#memory-overclock)
+  - [Increasing the memory clock](https://github.com/5Noxi/gpu-oc-uv#increasing-the-memory-clock)
+- [Final Test](https://github.com/5Noxi/gpu-oc-uv#final-test)
 
 ## Preconfigurations
 
@@ -26,7 +26,7 @@ You need to pay attention to the performance limit during overclocking, as you s
 ![](https://github.com/5Noxi/gpu-oc-uv/blob/main/images/hwinfo-powerlimit.png?raw=true)
 
 ### MSI Afterburner
-Download [MSI Afterburner](https://www.msi.com/Landing/afterburner/graphics-cards) and set a custom fan curve, which could look like the one in the image below (make sure the speed is not too low, as this would affect your results). You can use the preconfigured [cfg file]() or skip it.
+Download [MSI Afterburner](https://www.msi.com/Landing/afterburner/graphics-cards) and set a custom fan curve, which could look like the one in the image below (make sure the speed is not too low, as this would affect your results). You can use the preconfigured [cfg file](https://github.com/5Noxi/gpu-oc-uv/blob/main/assets/MSIAfterburner.cfg) or skip it.
 
 ![](https://github.com/5Noxi/gpu-oc-uv/blob/main/images/fancurve.png?raw=true)
 
@@ -45,7 +45,6 @@ schtasks /create /sc ONSTART /tn "MSIAfterburnerProfile" /tr "powershell.exe -No
 
 > https://learn.microsoft.com/en-us/windows-server/administration/windows-commands/schtasks-create
 
-⠀
 Set the `Power Limit` and `Temp. Limit` options to the maximum value and change the priority to power limit. Also, disable the automatic start option for now to prevent a loop if something goes wrong.
 
 ![](https://github.com/5Noxi/gpu-oc-uv/blob/main/images/MSIAfterburner-limits.png?raw=true)
@@ -58,7 +57,7 @@ Install [Superposition](https://benchmark.unigine.com/superposition), [OCCT](htt
 
 Use `Time Spy` and `Steel Nomad` - Avoid wildlife, solar bay and any light versions.
 
-### Superpositions
+### Superposition
 
 Use the highest preset that doesn't exceed your VRAM limit to test your core clock speed. Use 8k/4k optimized to test your VRAM.
 
@@ -68,7 +67,7 @@ Go into the 3D Adaptive tab and use the following settings:
 
 ![](https://github.com/5Noxi/gpu-oc-uv/blob/main/images/occt.png?raw=true)
 
-⠀
+
 ## Overclocking
 
 Your goal is to find a specific voltage and clock frequency that don't reach the performance limit (downclock) and don't cause a crash. Raising the clock frequency alone isn't really desirable, as you'll be throttling performance most of the time (reaching the performance limit), so you should limit it to a specific voltage.
@@ -140,7 +139,8 @@ Make sure to use a stable core clock speed. Always save the benchmark results be
   - Stress test it, if stable increase it by `5-10MHz`, if not go down by `50` and increase it by `5-10MHz`
 6. Safe your stable memory clock to a profile
 7. Test the stability of your memory clock via [memtest vulkan](https://github.com/GpuZelenograd/memtest_vulkan/releases), let it run for `~30-60min`
-⠀
+
+
 ## Final Test
 
 Use [OCCT](https://www.ocbase.com/download) to search for errors and for testing the stability of your OC/UV. [Furmark](https://geeks3d.com/furmark/) is known for consuming a lot of power. You can let it run for a while after completing all the steps.
