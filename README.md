@@ -4,18 +4,18 @@ Overclocking means increasing the clock speed, which increases temperatures. Und
 
 ## ToC
 
-- [Preconfigurations](https://github.com/5Noxi/gpu-oc-uv#preconfigurations)
-  - [MSI Afterburner](https://github.com/5Noxi/gpu-oc-uv#msi-afterburner)
-  - [3DMark](https://github.com/5Noxi/gpu-oc-uv#3dmark)
-  - [Superposition](https://github.com/5Noxi/gpu-oc-uv#superposition)
-  - [OCCT](https://github.com/5Noxi/gpu-oc-uv#occt)
-- [Overclocking](https://github.com/5Noxi/gpu-oc-uv#overclocking)
-  - [Increasing the core clock & finding the voltage](https://github.com/5Noxi/gpu-oc-uv#increasing-the-core-clock--finding-the-voltage)
-- [Undervolting](https://github.com/5Noxi/gpu-oc-uv#undervolting)
-  - [Limiting the voltage](https://github.com/5Noxi/gpu-oc-uv#limiting-the-voltage)
-- [Memory Overclock](https://github.com/5Noxi/gpu-oc-uv#memory-overclock)
-  - [Increasing the memory clock](https://github.com/5Noxi/gpu-oc-uv#increasing-the-memory-clock)
-- [Final Test](https://github.com/5Noxi/gpu-oc-uv#final-test)
+- [Preconfigurations](https://github.com/nohuto/gpu-oc-uv#preconfigurations)
+  - [MSI Afterburner](https://github.com/nohuto/gpu-oc-uv#msi-afterburner)
+  - [3DMark](https://github.com/nohuto/gpu-oc-uv#3dmark)
+  - [Superposition](https://github.com/nohuto/gpu-oc-uv#superposition)
+  - [OCCT](https://github.com/nohuto/gpu-oc-uv#occt)
+- [Overclocking](https://github.com/nohuto/gpu-oc-uv#overclocking)
+  - [Increasing the core clock & finding the voltage](https://github.com/nohuto/gpu-oc-uv#increasing-the-core-clock--finding-the-voltage)
+- [Undervolting](https://github.com/nohuto/gpu-oc-uv#undervolting)
+  - [Limiting the voltage](https://github.com/nohuto/gpu-oc-uv#limiting-the-voltage)
+- [Memory Overclock](https://github.com/nohuto/gpu-oc-uv#memory-overclock)
+  - [Increasing the memory clock](https://github.com/nohuto/gpu-oc-uv#increasing-the-memory-clock)
+- [Final Test](https://github.com/nohuto/gpu-oc-uv#final-test)
 
 ## Preconfigurations
 
@@ -23,12 +23,12 @@ Install [HWiNFO](https://www.hwinfo.com/download/) to monitor all kinds of infor
 
 You need to pay attention to the performance limit during overclocking, as you should not constantly reach it (display `Yes`):
 
-![](https://github.com/5Noxi/gpu-oc-uv/blob/main/images/hwinfo-powerlimit.png?raw=true)
+![](https://github.com/nohuto/gpu-oc-uv/blob/main/images/hwinfo-powerlimit.png?raw=true)
 
 ### MSI Afterburner
-Download [MSI Afterburner](https://www.msi.com/Landing/afterburner/graphics-cards) and set a custom fan curve, which could look like the one in the image below (make sure the speed is not too low, as this would affect your results). You can use the preconfigured [cfg file](https://github.com/5Noxi/gpu-oc-uv/blob/main/assets/MSIAfterburner.cfg) or skip it.
+Download [MSI Afterburner](https://www.msi.com/Landing/afterburner/graphics-cards) and set a custom fan curve, which could look like the one in the image below (make sure the speed is not too low, as this would affect your results). You can use the preconfigured [cfg file](https://github.com/nohuto/gpu-oc-uv/blob/main/assets/MSIAfterburner.cfg) or skip it.
 
-![](https://github.com/5Noxi/gpu-oc-uv/blob/main/images/fancurve.png?raw=true)
+![](https://github.com/nohuto/gpu-oc-uv/blob/main/images/fancurve.png?raw=true)
 
 If you don't want MSI afterburner running in the background all time, set a static curve and load a profile on system start:
 ```ps
@@ -47,7 +47,7 @@ schtasks /create /sc ONSTART /tn "MSIAfterburnerProfile" /tr "powershell.exe -No
 
 Set the `Power Limit` and `Temp. Limit` options to the maximum value and change the priority to power limit. Also, disable the automatic start option for now to prevent a loop if something goes wrong.
 
-![](https://github.com/5Noxi/gpu-oc-uv/blob/main/images/MSIAfterburner-limits.png?raw=true)
+![](https://github.com/nohuto/gpu-oc-uv/blob/main/images/MSIAfterburner-limits.png?raw=true)
 
 ---
 
@@ -65,7 +65,7 @@ Use the highest preset that doesn't exceed your VRAM limit to test your core clo
 
 Go into the 3D Adaptive tab and use the following settings:
 
-![](https://github.com/5Noxi/gpu-oc-uv/blob/main/images/occt.png?raw=true)
+![](https://github.com/nohuto/gpu-oc-uv/blob/main/images/occt.png?raw=true)
 
 
 ## Overclocking
@@ -102,7 +102,7 @@ Your goal is to find a specific voltage and clock frequency that don't reach the
 
 How your result could look like:
 
-![](https://github.com/5Noxi/gpu-oc-uv/blob/main/images/oc.png?raw=true)
+![](https://github.com/nohuto/gpu-oc-uv/blob/main/images/oc.png?raw=true)
 
 
 ## Undervolting
@@ -118,7 +118,7 @@ As mentioned at the beginning, undervolting limits the voltage for the GPU, resu
 3. Press `CTRL`, then highlight the curve from the right to the selected point (`906`)
 4. Select your point (`906`) and drag it down, so the last point is below the first point (e.g. `900`), example:
 
-![](https://github.com/5Noxi/gpu-oc-uv/blob/main/images/uv-curve.png?raw=true)
+![](https://github.com/nohuto/gpu-oc-uv/blob/main/images/uv-curve.png?raw=true)
 
 5. Safe the settings to a profile
 
